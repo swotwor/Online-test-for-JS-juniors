@@ -1,11 +1,11 @@
 import React from 'react';
+import MainComponent from "./components/mainComponent";
 import './App.css';
-import QuestionWindow from "./components/questionWindow";
 
 function App() {
   return (
-    <div className="App">
-      <QuestionWindow />
+    <div className="app">
+      <MainComponent />
     </div>
   );
 }

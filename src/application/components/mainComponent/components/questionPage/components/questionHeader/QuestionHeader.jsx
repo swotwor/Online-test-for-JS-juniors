@@ -1,7 +1,7 @@
 import React from 'react';
-import './HeaderStyle.css';
+import './QuestionHeaderStyle.css';
 
-const Header = props => {
+const QuestionHeader = props => {
     const {
         id,
         answers,
@@ -9,9 +9,11 @@ const Header = props => {
         correctAnswer,
     } = props.questions;
 
+    console.log(props.questions);
+
     return (
         <header className={'header'}>
-            <progress className={'progress'}/>
+            <progress className={'progress'} value="1" max={props.questions.length}/>
             <div className="questionNumber">
                 {id}
                 /
@@ -21,4 +23,4 @@ const Header = props => {
     );
 };
 
-export default React.memo(Header);
+export default React.memo(QuestionHeader);
