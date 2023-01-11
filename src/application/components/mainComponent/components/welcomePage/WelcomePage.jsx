@@ -3,12 +3,13 @@ import Button from "../../../../customeComponents/button";
 import {
     Link,
     Text,
-    Title, Warning,
+    Title,
     Wrapper,
+    WarningText,
 } from "./styledComponents";
 
 const WelcomePage = props => {
-    const { setStep } = props;
+    console.log(props);
 
     return (
         <Wrapper>
@@ -19,10 +20,10 @@ const WelcomePage = props => {
                     https://habr.com/ru/post/486820.
                 </Link>
             </Text>
-            <Button onClick={() => setStep(2)}>Начать</Button>
-            <Warning>
+            <Button onClick={() => ''}>Начать</Button>
+            <WarningText>
                 Предупреждение! В данный момент, процесс не сохраняется. Если обновите страницу, тест начнется сначала.
-            </Warning>
+            </WarningText>
         </Wrapper>
     );
 };

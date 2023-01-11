@@ -28,7 +28,7 @@ export const Link = styled.div`
   }
 `;
 
-export const Warning = styled.div`
+export const WarningText = styled.div`
   font-size: 15px;
   color: #ff9966;
   text-align: center;

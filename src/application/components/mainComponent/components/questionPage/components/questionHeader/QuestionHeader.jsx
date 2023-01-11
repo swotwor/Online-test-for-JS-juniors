@@ -2,22 +2,14 @@ import React from 'react';
 import './QuestionHeaderStyle.css';
 
 const QuestionHeader = props => {
-    const {
-        id,
-        answers,
-        question,
-        correctAnswer,
-    } = props.questions;
-
-    console.log(props.questions);
 
     return (
         <header className={'header'}>
-            <progress className={'progress'} value="1" max={props.questions.length}/>
+            <progress className={'progress'} value="1" max={30}/>
             <div className="questionNumber">
-                {id}
+
                 /
-                {props.questions.length}
+
             </div>
         </header>
     );

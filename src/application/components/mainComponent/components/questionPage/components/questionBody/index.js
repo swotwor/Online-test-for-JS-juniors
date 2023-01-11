@@ -1,3 +1,4 @@
 import Component from './QuestionBody';
+import {connect} from "react-redux";
 
-export default Component;
+export default connect(Component);

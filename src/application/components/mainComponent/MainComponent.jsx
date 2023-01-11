@@ -1,35 +1,30 @@
 import React from 'react';
+import EndPage from "./components/endPage";
 import WelcomePage from "./components/welcomePage";
 import QuestionPage from "./components/questionPage";
-import EndPage from "./components/endPage";
+import { useSelector } from "react-redux";
 import './MainComponentsStyle.css'
-import { questions } from "../../../helper/auestions";
 
 const MainComponent = () => {
-    const [step, setStep] = React.useState(1);
-    const [questionState, setQuestionState] = React.useState({
-        currentQuestion: 1,
-        totalQuestions: questions.length,
-        correctQuestion: 0,
-    });
+    const state = useSelector(state => state);
+    console.log(state);
+
+    const step = 1;
 
     return (
         <div className={'mainComponent_wrapper'}>
             {step === 1
-                ? <WelcomePage setStep={setStep}/>
+                ? <WelcomePage />
                 : null
-            };
+            }
             {step === 2
-                ? <QuestionPage
-                    setStep={setStep}
-                    setQuestionState={setQuestionState}
-                   />
+                ? <QuestionPage />
                 : null
-            };
+            }
             {step === 3
-                ? <EndPage setStep={setStep}/>
+                ? <EndPage />
                 : null
-            };
+            }
         </div>
     );
 };

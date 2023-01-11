@@ -1,3 +1,4 @@
 import Component from './EndPage';
+import { connect } from "react-redux";
 
-export default Component;
+export default connect(Component);
