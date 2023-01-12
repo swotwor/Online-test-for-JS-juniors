@@ -1,17 +1,26 @@
 import React from 'react';
-import './QuestionHeaderStyle.css';
+import {useSelector} from "react-redux";
+import {
+    Questions,
+    Wrapper,
+} from "./styledComponents";
 
-const QuestionHeader = props => {
+const QuestionHeader = () => {
+    const state = useSelector(state => state);
+    const {
+        totalQuestions,
+        currentQuestion,
+    } = state.state;
 
     return (
-        <header className={'header'}>
-            <progress className={'progress'} value="1" max={30}/>
-            <div className="questionNumber">
-
+        <Wrapper>
+            <progress className={'progress'} value={currentQuestion} max={totalQuestions}/>
+            <Questions className="questionNumber">
+                {currentQuestion}
                 /
-
-            </div>
-        </header>
+                {totalQuestions}
+            </Questions>
+        </Wrapper>
     );
 };
 

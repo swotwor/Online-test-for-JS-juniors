@@ -7,9 +7,15 @@ import {
     Wrapper,
     WarningText,
 } from "./styledComponents";
+import { useDispatch } from "react-redux";
+import { setStep } from "../../../../../store/reducer";
 
-const WelcomePage = props => {
-    console.log(props);
+const WelcomePage = () => {
+    const dispatch = useDispatch();
+
+    function handleClick() {
+        dispatch(setStep())
+    }
 
     return (
         <Wrapper>
@@ -20,7 +26,7 @@ const WelcomePage = props => {
                     https://habr.com/ru/post/486820.
                 </Link>
             </Text>
-            <Button onClick={() => ''}>Начать</Button>
+            <Button onClick={() => handleClick()}>Начать</Button>
             <WarningText>
                 Предупреждение! В данный момент, процесс не сохраняется. Если обновите страницу, тест начнется сначала.
             </WarningText>
@@ -28,4 +34,4 @@ const WelcomePage = props => {
     );
 };
 
-export default React.memo(WelcomePage);
+export default WelcomePage;

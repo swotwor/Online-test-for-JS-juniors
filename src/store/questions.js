@@ -29,4 +29,4 @@ export const questions = [
         question: 'Сколько будет 6 + 2 ??',
         correctAnswer: 1,
     },
-]
+];
