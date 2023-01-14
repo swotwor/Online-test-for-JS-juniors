@@ -22,6 +22,7 @@ export const AnswerBlock = styled.div`
   margin-bottom: 5px;
   cursor: pointer;
   border-radius: 15px;
+  background-color: ${props => props.correctAnswer ? '#5dff4b' : null};
   
   
   &:last-child {

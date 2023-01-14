@@ -5,4 +5,6 @@ export const defaultState = {
     totalQuestions: questions.length,
     currentQuestion: 1,
     correctQuestions: 0,
+    answersToQuestions: 0,
+    questionWasAnswered: false,
 };

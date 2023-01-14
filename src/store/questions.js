@@ -9,7 +9,7 @@ export const questions = [
         id: 2,
         answers: [5, 4, 7],
         question: 'Сколько будет 3 + 2 ??',
-        correctAnswer: 1,
+        correctAnswer: 0,
     },
     {
         id: 3,

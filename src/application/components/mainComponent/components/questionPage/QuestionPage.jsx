@@ -3,14 +3,18 @@ import Button from "../../../../customeComponents/button";
 import QuestionBody from "./components/questionBody";
 import QuestionHeader from "./components/questionHeader";
 import './QuestionPageStyle.css';
-import { useDispatch } from "react-redux";
-import { setStep } from "../../../../../store/reducer";
+import {useDispatch, useSelector} from "react-redux";
+import {setQuestion, setQuestionWasAnswered, setStep} from "../../../../../store/reducer";
 
 const QuestionPage = () => {
     const dispatch = useDispatch();
+    const state = useSelector(state => state.state);
 
     function handleClick() {
-        dispatch(setStep())
+        if (state.questionWasAnswered) {
+            dispatch(setQuestion());
+            dispatch(setQuestionWasAnswered(false));
+        }
     }
 
     return (

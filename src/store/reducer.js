@@ -19,6 +19,17 @@ export const questionnaireReducer = (state = defaultState, action) => {
                 ...state,
                 step: state.step + 1
             };
+        case 'SET_ANSWERS_TO_QUESTIONS':
+            return {
+                ...state,
+                answersToQuestions: state.answersToQuestions + 1
+            };
+        case 'SET_QUESTION_WAS_ANSWERED':
+            console.log(action)
+            return {
+                ...state,
+                questionWasAnswered: action.payload
+            };
         default:
             return state;
     };
@@ -26,3 +37,6 @@ export const questionnaireReducer = (state = defaultState, action) => {
 
 export const setStep = () => ({type: 'NEXT_STEP'});
 export const setQuestion = () => ({type: 'NEXT_QUESTION'});
+export const setCorrectQuestions = () => ({type: 'CORRECT_QUESTION'});
+export const setAnswersToQuestions = () => ({type: 'SET_ANSWERS_TO_QUESTIONS'});
+export const setQuestionWasAnswered = payload => ({type: 'SET_QUESTION_WAS_ANSWERED', payload});
