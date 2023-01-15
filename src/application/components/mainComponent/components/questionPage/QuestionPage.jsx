@@ -4,7 +4,7 @@ import QuestionBody from "./components/questionBody";
 import QuestionHeader from "./components/questionHeader";
 import './QuestionPageStyle.css';
 import {useDispatch, useSelector} from "react-redux";
-import {setQuestion, setQuestionWasAnswered, setStep} from "../../../../../store/reducer";
+import {setCurrentAnswer, setQuestion, setQuestionWasAnswered, setStep} from "../../../../../store/reducer";
 
 const QuestionPage = () => {
     const dispatch = useDispatch();
@@ -18,6 +18,7 @@ const QuestionPage = () => {
             if (state.questionWasAnswered) {
                 dispatch(setQuestion());
                 dispatch(setQuestionWasAnswered(false));
+                dispatch(setCurrentAnswer(3))
             }
         }
     }

@@ -1,14 +1,45 @@
 import React from 'react';
+import {
+    Body,
+    Title,
+    Wrapper,
+    BodyTitle, BodyText, ContentWrapper,
+} from "./styledComponents";
+import { useDispatch, useSelector } from "react-redux";
+import Button from "../../../../customeComponents/button";
+import { RESET } from "../../../../../store/reducer";
 
-const EndPage = props => {
-    const {
-        strings,
-    } = props;
+const EndPage = () => {
+    const state = useSelector(state => state.state);
+    const dispatch = useDispatch();
+
+    const handleClickOnButton = () => {
+        dispatch(RESET());
+    };
+
     return (
-        <div>
-            
-        </div>
+        <Wrapper>
+            <Body>
+                <Title>
+                    Поздравляю с окончаним теста!
+                </Title>
+                <ContentWrapper>
+                    <BodyTitle>
+                        Итак, вот твои результаты:
+                    </BodyTitle>
+                    <BodyText>
+                        - вопросов: {state.totalQuestions}
+                    </BodyText>
+                    <BodyText>
+                        - правильных ответов: {state.correctQuestions}
+                    </BodyText>
+                </ContentWrapper>
+            </Body>
+            <Button onClick={() => handleClickOnButton()}>
+                Пройти ещё раз
+            </Button>
+        </Wrapper>
     );
 };
 
-export default React.memo(EndPage);
+export default EndPage;

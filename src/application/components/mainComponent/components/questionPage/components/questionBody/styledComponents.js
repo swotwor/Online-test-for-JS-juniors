@@ -17,16 +17,16 @@ export const BlockWithAnswers = styled.div`
 
 export const AnswerBlock = styled.div`
   padding: 5px 10px;
-  background-color: lightgray;
+  //background-color: #d3d3d3ff;
   text-align: center;
   margin-bottom: 5px;
   cursor: pointer;
   border-radius: 15px;
-  background-color: ${props => props.correctAnswer ? '#5dff4b' : null};
+  background-color: ${props => props.correctAnswer};
   
   
   &:last-child {
-    margin-bottom: 0px;
+    margin-bottom: 0;
   }
 `;
 
