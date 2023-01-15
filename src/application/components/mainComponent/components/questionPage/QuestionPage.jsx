@@ -9,11 +9,16 @@ import {setQuestion, setQuestionWasAnswered, setStep} from "../../../../../store
 const QuestionPage = () => {
     const dispatch = useDispatch();
     const state = useSelector(state => state.state);
+    console.log(state);
 
     function handleClick() {
-        if (state.questionWasAnswered) {
-            dispatch(setQuestion());
-            dispatch(setQuestionWasAnswered(false));
+        if (state.totalQuestions === state.currentQuestion) {
+            dispatch(setStep());
+        } else {
+            if (state.questionWasAnswered) {
+                dispatch(setQuestion());
+                dispatch(setQuestionWasAnswered(false));
+            }
         }
     }
 

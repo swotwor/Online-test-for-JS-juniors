@@ -25,7 +25,7 @@ export const questionnaireReducer = (state = defaultState, action) => {
                 answersToQuestions: state.answersToQuestions + 1
             };
         case 'SET_QUESTION_WAS_ANSWERED':
-            console.log(action)
+            // console.log(action);
             return {
                 ...state,
                 questionWasAnswered: action.payload
