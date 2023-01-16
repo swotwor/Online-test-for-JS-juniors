@@ -10,18 +10,9 @@ const MainComponent = () => {
 
     return (
         <div className={'mainComponent_wrapper'}>
-            {state.step === 1
-                ? <WelcomePage />
-                : null
-            }
-            {state.step === 2
-                ? <QuestionPage />
-                : null
-            }
-            {state.step === 3
-                ? <EndPage />
-                : null
-            }
+            { state.step === 1 && <WelcomePage /> }
+            { state.step === 2 && <QuestionPage /> }
+            { state.step === 3 && <EndPage /> }
         </div>
     );
 };

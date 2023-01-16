@@ -1,5 +1,5 @@
 import { defaultState } from "./state";
-import {questions} from "./questions";
+import { questions } from "./questions";
 
 export const questionnaireReducer = (state = defaultState, action) => {
     switch (action.type) {
@@ -26,7 +26,6 @@ export const questionnaireReducer = (state = defaultState, action) => {
                 answersToQuestions: state.answersToQuestions + 1
             };
         case 'SET_QUESTION_WAS_ANSWERED':
-            // console.log(action);
             return {
                 ...state,
                 questionWasAnswered: action.payload
@@ -40,20 +39,20 @@ export const questionnaireReducer = (state = defaultState, action) => {
             return {
                 ...state,
                 step: 1,
+                currentAnswer: 3,
                 totalQuestions: questions.length,
                 currentQuestion: 1,
                 correctQuestions: 0,
                 answersToQuestions: 0,
                 questionWasAnswered: false,
-                currentAnswer: 3,
             };
         default:
             return state;
     };
 };
 
-export const setStep = () => ({type: 'NEXT_STEP'});
 export const RESET = () => ({type: 'RESET'});
+export const setStep = () => ({type: 'NEXT_STEP'});
 export const setQuestion = () => ({type: 'NEXT_QUESTION'});
 export const setCurrentAnswer = payload => ({type: 'SET_CURRENT_ANSWER', payload});
 export const setCorrectQuestions = () => ({type: 'SET_CORRECT_QUESTION'});
