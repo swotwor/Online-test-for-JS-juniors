@@ -8,6 +8,7 @@ button {
     line-height: 40px;
     cursor: pointer;
     border: none;
+    margin: 0 auto;
 }
 
 button:hover {
