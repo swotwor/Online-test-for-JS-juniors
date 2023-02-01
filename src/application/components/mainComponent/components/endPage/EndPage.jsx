@@ -21,7 +21,7 @@ const EndPage = () => {
         <Wrapper>
             <Body>
                 <Title>
-                    Поздравляю с окончаним теста!
+                    Поздравляю!
                 </Title>
                 <ContentWrapper>
                     <BodyTitle>
